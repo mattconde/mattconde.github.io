@@ -1,61 +1,58 @@
 ---
 title: Mac setup
-date: "2018-10-21T16:20:00.000Z"
+date: '2018-10-21T16:20:00.000Z'
 ---
 
 This guide covers the basics of setting up a development environment on a new Mac. It's written as a reference for setting up my working environment or installing/configuring languages, libraries and apps that I use day to day.
 
+---
 
-_____
 ## System preferences
 
-The first thing you should do is: __Apple menu () > About This Mac > Software Update__. Admire your specs here for a moment whilst you update.
-
+The first thing you should do is: **Apple menu () > About This Mac > Software Update**. Admire your specs here for a moment whilst you update.
 
 #### Users & Groups
 
 Set up Apple ID.
 
-
 #### Trackpad
 
-* Point & Click
-  * Uncheck *Look up & data detectors*
-  * Check *Secondary click*
-  * Uncheck *Tap to click*
-  * Increase *Tracking speed* the default is too slow
-* Scroll & Zoom
-  * Check *Scroll direction: Natural*
-  * Uncheck *Zoom in or out*
-  * Uncheck *Smart zoom*
-  * Uncheck *Rotate*
-* More Gestures
-  * Uncheck *Swipe between pages*
-  * Check *Swipe between full-screen apps*
-  * Uncheck *Notification Centre*
-  * Check *Mission Control*
-  * Uncheck *App Exposé*
-  * Uncheck *Launchpad*
-  * Uncheck *Show Desktop*
-
+- Point & Click
+  - Uncheck _Look up & data detectors_
+  - Check _Secondary click_
+  - Uncheck _Tap to click_
+  - Increase _Tracking speed_ the default is too slow
+- Scroll & Zoom
+  - Check _Scroll direction: Natural_
+  - Uncheck _Zoom in or out_
+  - Uncheck _Smart zoom_
+  - Uncheck _Rotate_
+- More Gestures
+  - Uncheck _Swipe between pages_
+  - Check _Swipe between full-screen apps_
+  - Uncheck _Notification Centre_
+  - Check _Mission Control_
+  - Uncheck _App Exposé_
+  - Uncheck _Launchpad_
+  - Uncheck _Show Desktop_
 
 #### Menubar
 
-* Hide *Bluetooth* icon
-* Change *battery* to show percentage
+- Hide _Bluetooth_ icon
+- Change _battery_ to show percentage
 
+---
 
-_____
 ## Finder
 
-* In *Preferences* check *Show all filename extensions*
-* In *Preferences* check *Remove items from the Trash after 30 days*
-* Add *projects* directory to *Favourites*
-* Add *root* directory to *Favourites*
-* Enable view hidden files by pressing __CMD + SHIFT + .__ whilst in a directory
+- In _Preferences_ check _Show all filename extensions_
+- In _Preferences_ check _Remove items from the Trash after 30 days_
+- Add _projects_ directory to _Favourites_
+- Add _root_ directory to _Favourites_
+- Enable view hidden files by pressing **CMD + SHIFT + .** whilst in a directory
 
+---
 
-_____
 ## Xcode
 
 Install Xcode and Xcode command line tools both installed. This step is required for many other tools going forward.
@@ -66,11 +63,11 @@ xcode-select --install
 
 Follow the instructions that pop-up.
 
+---
 
-_____
 ## Homebrew
 
-You're also going to want *Homebrew* as we will use this to install and manage a few other apps. Paste this is your Terminal prompt.
+You're also going to want _Homebrew_ as we will use this to install and manage a few other apps. Paste this is your Terminal prompt.
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -90,13 +87,13 @@ brew install \
   vim
 ```
 
-Once this completes add *Cask* for also managing large binaries with *Homebrew*
+Once this completes add _Cask_ for also managing large binaries with _Homebrew_
 
 ```bash
 brew tap caskroom/cask
 ```
 
-Once *Cask* is working install all the things (Note: I'm a web dev so few extra browsers in this list)
+Once _Cask_ is working install all the things (Note: I'm a web dev so few extra browsers in this list)
 
 ```bash
 brew cask install \
@@ -112,28 +109,29 @@ brew cask install \
   visual-studio-code
 ```
 
-______________
+---
+
 > Check out the [Homebrew cheatsheet](https://devhints.io/homebrew)
 
+---
 
-_____
 ## Fonts
 
-Install *Dank Mono* latest [release](https://dank.sh/releases/)
+Install _Dank Mono_ latest [release](https://dank.sh/releases/)
 
+---
 
-_____
 ## iTerm2
 
 Change Preferences
 
-* Profiles > General > Working Directory > Check *Reuse previous session's directory*
-* Colors > Color Presets > Import... > *Find iterm2-night-owl* ([Night Owl theme](https://github.com/nickcernis/iterm2-night-owl))
-* Text > Font > Change Font > *Find Dank Mono*
-* Appearance > Tabs > Check *Strech tabs to fill bar*
+- Profiles > General > Working Directory > Check _Reuse previous session's directory_
+- Colors > Color Presets > Import... > _Find iterm2-night-owl_ ([Night Owl theme](https://github.com/nickcernis/iterm2-night-owl))
+- Text > Font > Change Font > _Find Dank Mono_
+- Appearance > Tabs > Check _Strech tabs to fill bar_
 
+---
 
-_____
 ## Fish shell
 
 Installation if you already haven't
@@ -148,12 +146,11 @@ Once installed we need to make it the default shell first we add it to the accep
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 ```
 
-then we can make *Fish* our default shell
+then we can make _Fish_ our default shell
 
 ```bash
 chsh -s /usr/local/bin/fish
 ```
-
 
 #### Configuration
 
@@ -165,7 +162,7 @@ mkdir -p ~/.config/fish
 touch ~/.config/fish/config.fish
 ```
 
-then lets clear out the default greeting message *Fish* comes with
+then lets clear out the default greeting message _Fish_ comes with
 
 ```bash
 echo "set -g -x fish_greeting ''" >> ~/.config/fish/config.fish
@@ -173,7 +170,7 @@ echo "set -g -x fish_greeting ''" >> ~/.config/fish/config.fish
 
 #### Package manager
 
-Recently I've been using [Fisher](https://github.com/jorgebucaran/fisher) for this so to install fisher add the following to your *Fish* config file `~/.config/fish/config.fish`
+Recently I've been using [Fisher](https://github.com/jorgebucaran/fisher) for this so to install fisher add the following to your _Fish_ config file `~/.config/fish/config.fish`
 
 ```fish
 if not functions -q fisher
@@ -201,10 +198,12 @@ Fish can parse your installed man pages and automatically generate completion fi
 fish_update_completions
 ```
 
-______________
+---
+
 > Check out the [Fish shell cheatsheet](https://devhints.io/fish-shell)
 
-_____
+---
+
 ## Git
 
 Git huh? What a tool
@@ -231,12 +230,11 @@ git config --global credential.helper osxkeychain
 git config --global --add merge.ff false
 ```
 
+---
 
-_____
 ## SSH Config for Github
 
 The next part is straight from the offical documentation.
-
 
 #### Check for existing SSH keys
 
@@ -249,7 +247,6 @@ ls -al ~/.ssh
 
 Check the directory listing to see if you have files named either id_rsa.pub or id_dsa.pub. If you don't have either of those files then read on, otherwise skip the next section.
 
-
 #### Generate a new SSH key
 
 If you don't have an SSH key you need to generate one. To do that you need to run the commands below, and make sure to substitute the placeholder with your email. The default settings are preferred, so when you're asked to "enter a file in which to save the key,"" just press Enter to continue.
@@ -258,7 +255,6 @@ If you don't have an SSH key you need to generate one. To do that you need to ru
 # Creates a new ssh key, using the provided email as a label
 ssh-keygen -t rsa -C "your_email@example.com"
 ```
-
 
 #### Add your SSH key to the ssh-agent
 
@@ -283,7 +279,6 @@ No matter what operating system version you run you need to run this command to 
 ssh-add -K ~/.ssh/id_rsa
 ```
 
-
 #### Adding a new SSH key to your GitHub account
 
 The last step is to let GitHub know about your SSH key. Run this command to copy your key to your clipboard:
@@ -294,20 +289,21 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 Then go to GitHub and input your new SSH key. Paste your key in the "Key" textbox and pick a name that represents the computer you're currently using.
 
-______________
+---
+
 > Check out the official guide: [Github ssh](https://help.github.com/articles/connecting-to-github-with-ssh/)
 >
 > Check out a git tricks cheatsheet: [git tricks](https://devhints.io/git-tricks)
 
+---
 
-_____
 ## Node.js
 
-Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Installing *node* with *brew* is easy,
-it comes with *npm* as the default package manager. Where as I prefer to use *yarn* as a package manager; for working
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Installing _node_ with _brew_ is easy,
+it comes with _npm_ as the default package manager. Where as I prefer to use _yarn_ as a package manager; for working
 with monorepos and such.
 
-For managing the version of node installed I use *n* it makes switching versions really easy.
+For managing the version of node installed I use _n_ it makes switching versions really easy.
 
 ```bash
 # Install node with brew
@@ -323,27 +319,27 @@ yarn global add n
 n lts
 ```
 
+---
 
-_____
 ## Terminal utilities
-
 
 #### bat
 
-*bat* is an improved *cat*, it has highlighting and line numbers and everything
+_bat_ is an improved _cat_, it has highlighting and line numbers and everything
 
 ```bash
 brew install bat
 ```
 
-then add an alias to your *Fish* config file `~/.config/fish/config.fish`; so you are always using the mighty *bat*
+then add an alias to your _Fish_ config file `~/.config/fish/config.fish`; so you are always using the mighty _bat_
 
 ```
 alias cat="bat"
 ```
-______________
-> Check it out: [bat](https://github.com/sharkdp/bat)
 
+---
+
+> Check it out: [bat](https://github.com/sharkdp/bat)
 
 #### thefuck
 
@@ -353,14 +349,15 @@ Installation
 brew install thefuck
 ```
 
-Set up an alias by adding the following to your *Fish* config file `~/.config/fish/config.fish`
+Set up an alias by adding the following to your _Fish_ config file `~/.config/fish/config.fish`
 
 ```fish
 thefuck --alias | source
 ```
-______________
-> Check it out: [thefuck](https://github.com/nvbn/thefuck)
 
+---
+
+> Check it out: [thefuck](https://github.com/nvbn/thefuck)
 
 #### tldr
 
@@ -373,13 +370,14 @@ brew install tldr
 ```
 
 Usage:
+
 ```bash
 tldr bat
 ```
 
-______________
-> Check it out: [tldr](https://tldr.sh/)
+---
 
+> Check it out: [tldr](https://tldr.sh/)
 
 #### fd
 
@@ -389,7 +387,7 @@ A replacement for `find`. Install it with brew
 brew install fd
 ```
 
-Set up an alias by adding the following to your *Fish* config file `~/.config/fish/config.fish`
+Set up an alias by adding the following to your _Fish_ config file `~/.config/fish/config.fish`
 
 ```
 alias find="fd"
@@ -405,9 +403,9 @@ fd app
 fd app -e js
 ```
 
-______________
-> Check it out: [fd](https://github.com/sharkdp/fd/)
+---
 
+> Check it out: [fd](https://github.com/sharkdp/fd/)
 
 #### diff-so-fancy
 
@@ -441,35 +439,53 @@ git config --global color.diff.new        "green bold"
 git config --global color.diff.whitespace "red reverse"
 ```
 
-______________
+---
+
 > Check it out: [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 
+---
 
-_____
 ## Visual Studio Code
-
 
 #### Extensions
 
-* [Night Owl by Sarah Drasner](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl)
-* [Material Icon Theme by Philipp Kief](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
-* [ESLint by Dirk Baeumer](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-* [Prettier by Esben Petersen](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-* [Insert relative path by me](https://marketplace.visualstudio.com/items?itemName=mattconde.insert-relative-path)
-* [Flow Language Support by flowtype](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode)
+- [Night Owl by Sarah Drasner](https://marketplace.visualstudio.com/items?itemName=sdras.night-owl)
+- [Material Icon Theme by Philipp Kief](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
+- [ESLint by Dirk Baeumer](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier by Esben Petersen](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Insert relative path by me](https://marketplace.visualstudio.com/items?itemName=mattconde.insert-relative-path)
+- [Flow Language Support by flowtype](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode)
 
-* [carbon-now-sh by Eric Adamski](https://marketplace.visualstudio.com/items?itemName=ericadamski.carbon-now-sh)
-* [Paste JSON as Code by quicktype](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
+- [carbon-now-sh by Eric Adamski](https://marketplace.visualstudio.com/items?itemName=ericadamski.carbon-now-sh)
+- [Paste JSON as Code by quicktype](https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype)
 
-______________
+#### Snippets
+
+```javascript
+// Console log with annotation
+{
+	"Print to console with annotation": {
+		"scope": "javascript,typescript",
+		"prefix": "lg",
+		"body": [
+			"console.log('$1', $1);",
+			"$2"
+		],
+		"description": "Log output to console with annotation first."
+	}
+}
+```
+
+---
+
 > Check out [awesome-vscode](https://github.com/viatsko/awesome-vscode)
 
+---
 
-_____
 ## References
 
 Thanks to all who I have referenced
 
-* [sourabhbajaj](https://sourabhbajaj.com/mac-setup/)
-* [devhints](https://devhints.io)
-* more to be added
+- [sourabhbajaj](https://sourabhbajaj.com/mac-setup/)
+- [devhints](https://devhints.io)
+- more to be added
